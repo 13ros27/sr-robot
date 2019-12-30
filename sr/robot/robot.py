@@ -125,7 +125,7 @@ class Robot(object):
             return
 
         # For now, just display the fact we have a webcam
-        logger.info( " - Webcam" )
+        logger.info( " - Webcam ({0})".format(self.vision.camera_type) )
 
     def _dump_power(self):
         "Write information about the power board to stdout"
