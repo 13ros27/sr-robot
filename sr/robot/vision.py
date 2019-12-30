@@ -114,6 +114,12 @@ class Vision(object):
 
         self.camera_focal_length = None
         self._init_focal_length()
+        
+        #Use self.camera_focal_length to set self.camera_type so that it can be read by robot.py
+        if self.camera_focal_length == C500_focal_length:
+            self.camera_type = 'C500'
+        elif self.camera_focal_length == C270_focal_length:
+            self.camera_type = 'C270'
 
         # Lock for the use of the vision
         self.lock = threading.Lock()
